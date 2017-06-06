@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 8080",
-    "build": "webpack -p --config webpack.config.prod.babel.js",
+    "build": "webpack -p --config ./webpack.config.prod.babel.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.prod.babel.js",
     "dev-server": "nodemon src/server"
   },
   "dependencies": {
