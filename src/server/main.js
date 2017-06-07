@@ -1,11 +1,9 @@
 import express from 'express';
-import compression from 'compression';
 import  { MongoClient } from 'mongodb';
 
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.use(compression());
 //app.use('/build', express.static('build'));
 
 let db;
