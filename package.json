@@ -5,7 +5,7 @@
   "author": "Dusan Sacha",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/server",
     "build": "webpack -p --config ./webpack.config.prod.babel.js",
     "postinstall": "webpack -p --config ./webpack.config.prod.babel.js",
     "dev-server": "webpack-dev-server --config webpack.config.dev.babel.js --port 8080"
