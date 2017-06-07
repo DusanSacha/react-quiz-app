@@ -6,7 +6,11 @@ import  { MongoClient } from 'mongodb';
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.use(express.static(__dirname + '/dist/'));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/dist/index.html');
+});
 
 let db;
 
