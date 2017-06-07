@@ -13,10 +13,6 @@ MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/derdie
   db = database;
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
 app.get('/api/categories', (req, res) => {
   db.collection('category').find({},{title: 1}).toArray( (err, result) => {
     res.send(result);
