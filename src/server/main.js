@@ -1,10 +1,19 @@
+import path from 'path';
 import express from 'express';
 import  { MongoClient } from 'mongodb';
+
 
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.use(express.static(__dirname + '/dist/'));
+//app.use(express.static(__dirname + '/dist/'));
+
+const indexPath = path.join(__dirname, 'index.html');
+const publicPath = express.static(path.join(__dirname, 'dist'));
+
+app.use('/dist', publicPath);
+app.get('/', function (_, res) { res.sendFile(indexPath); });
+
 
 let db;
 
