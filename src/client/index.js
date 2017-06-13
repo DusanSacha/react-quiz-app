@@ -3,26 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Select from './components/Select';
 import Category from './components/Category';
-//import axios from 'axios';
-
-
-// axios.get('/api/test')
-//   .then(function (response) {
-//     console.log(response);
-
-//     const data = response.data.map((item) => {
-//       return (<div key={item.name}>{item.name}</div>);
-//     });
-
-//     class App extends React.Component{
-//       render(){
-//         return(<div>{data}</div>);
-//       }
-//     }
-
-//     const rootEl = document.getElementById('root');
-//     ReactDOM.render(<App />, rootEl);
-//   });
+import './styles/styles.css';
 
 const App = () => {
   return(

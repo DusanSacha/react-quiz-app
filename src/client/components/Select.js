@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import MainLayout from './MainLayout';
 import axios from 'axios';
 
 class Select extends React.Component {
@@ -44,7 +45,7 @@ class Select extends React.Component {
   render(){
     const { fireRedirect } = this.state;
     return(
-      <div>
+      <MainLayout>
         <h1>Select Lesson:</h1>
         <form onSubmit={this.handleSubmit}>
             <select value={this.state.selectedValue} onChange={this.handleChange}>
@@ -54,7 +55,7 @@ class Select extends React.Component {
             <button type='submit'>Go</button>
         </form>
         { fireRedirect && <Redirect to={'/category/'+this.state.selectedValue} />}
-      </div>  
+      </MainLayout>
     );
   }
 }

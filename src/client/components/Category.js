@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import MainLayout from './MainLayout';
 import axios from 'axios';
 
 class Category extends React.Component{
@@ -88,7 +89,7 @@ class Category extends React.Component{
       });
 
       return(
-          <div>
+          <MainLayout>
               <ul>
                 <li><NavLink exact to='/'>Home</NavLink></li>
                 <li><a href="#" onClick={this.onRestartQuiz}>Restart</a></li>
@@ -102,7 +103,7 @@ class Category extends React.Component{
               <div>Wrong Answers: {this.state.wrongAnswers}</div>
               <div>Question No.: {this.state.wrongAnswers + this.state.correctAnswers} / {this.state.questions.length}</div>
               { this.state.quizOver && <div>Quiz is over. Thanks!</div>}
-          </div>
+          </MainLayout>
       );
     }
   }
