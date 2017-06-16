@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 
 class MainLayout extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class MainLayout extends React.Component {
   render() {
     return(
       <div id="app">
-        <header><h1>React Quiz Game</h1></header>
+        <Header>React Quiz Game</Header>
         { this.props.children }
       </div>
     );

@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
+    "test": "jest",
     "build": "webpack -p --config ./webpack.config.prod.babel.js",
     "postinstall": "webpack -p --config ./webpack.config.prod.babel.js",
     "dev-server": "webpack-dev-server --config webpack.config.dev.babel.js --port 8080 --open"
@@ -26,12 +27,15 @@
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
     "style-loader": "^0.18.2",
+    "styled-components": "^2.1.0",
     "webpack": "^2.4.1"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "proxy": "http://localhost:8000"

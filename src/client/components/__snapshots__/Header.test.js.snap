@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly with header content 1`] = `
+<h1
+  className="sc-bdVaJa hUjkp"
+>
+  React Quiz App
+</h1>
+`;
+
+exports[`Header renders correctly without content 1`] = `
+<h1
+  className="sc-bdVaJa hUjkp"
+/>
+`;
