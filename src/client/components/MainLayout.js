@@ -8,7 +8,7 @@ class MainLayout extends React.Component {
   render() {
     return(
       <div id="app">
-        <Header>React Quiz Game Test Fail</Header>
+        <Header>React Quiz Game Test</Header>
         { this.props.children }
       </div>
     );
