@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-const Header = styled.h1`
+const Footer = styled.footer`
   color: rebeccapurple;
-  display: flex;
+  padding: 10px 0px;
   justify-content: center;
+  display: flex;
 `
 ;
 
-export default Header;
+export default Footer;

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MainLayout from './MainLayout';
 import axios from 'axios';
+import TilesContainer from './TilesContainer';
+import Tile from './Tile';
 
 class Select extends React.Component {
   
@@ -9,31 +11,15 @@ class Select extends React.Component {
     super(props);
 
     this.state = {
-      selectedValue: '',
-      fireRedirect: false,
       categories: [],
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({fireRedirect: true});
-  }
-
-  handleChange(event) {
-    this.setState({
-      selectedValue: event.target.value,
-    });    
   }
 
   componentDidMount() {
     axios.get('/api/categories')
       .then((response) => {
         const categories = response.data.map((item) => {
-          return (<option value={item.title} key={item._id}>{item.title}</option>);
+          return (<Link to={'/category/'+item.title}><Tile>{item.title}</Tile></Link>);
         });
 
         this.setState({
@@ -43,18 +29,11 @@ class Select extends React.Component {
   }
 
   render(){
-    const { fireRedirect } = this.state;
     return(
       <MainLayout>
-        <h1>Select Lesson:</h1>
-        <form onSubmit={this.handleSubmit}>
-            <select value={this.state.selectedValue} onChange={this.handleChange}>
-                <option value=''>-- select lesson --</option>
-                {this.state.categories}
-            </select>
-            <button type='submit'>Go</button>
-        </form>
-        { fireRedirect && <Redirect to={'/category/'+this.state.selectedValue} />}
+        <TilesContainer>
+          {this.state.categories}
+        </TilesContainer>
       </MainLayout>
     );
   }
